@@ -2,7 +2,8 @@ FROM base/archlinux:latest
 
 RUN set -xe \
 && pacman -Syu \
-&& pacman -S docker python
+&& pacman --noconfirm -S docker python \
+&& rm -rf /var/cache/pacman /var/lib/pacman/sync
 
 # just sleep for a day
 CMD ["sleep","86400"]
