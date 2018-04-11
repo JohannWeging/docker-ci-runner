@@ -1,7 +1,7 @@
 FROM base/archlinux:latest
 
 RUN set -xe \
-&& pacman -Syu \
+&& pacman --noconfirm -Syu \
 && pacman --noconfirm -S docker python \
 && rm -rf /var/cache/pacman /var/lib/pacman/sync
 
